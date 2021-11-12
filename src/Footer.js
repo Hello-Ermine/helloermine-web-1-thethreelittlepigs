@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Footer.css";
 import nt from './img/member/Nt.jpg';
 import geaw from './img/member/Geaw.jpg';
 import jerome from './img/member/Jerome.jpg'
