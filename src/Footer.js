@@ -21,6 +21,11 @@ const Members = styled.div`
 const Person = styled.div`
       width: 120px;
       margin: 1em;
+      transition: 300ms ease-in-out;
+
+      :hover{
+        transform: translateY(-5px);
+      }
 
       & >*{
         text-transform: uppercase;

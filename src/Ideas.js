@@ -21,8 +21,7 @@ const Textbox = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     z-index: 10;
-    animation: floating infinite 3s;
-    animation-timing-function: ease-in-out;
+    animation: floating infinite 3s ease-in-out;
 
     & * {
         margin: 0;
