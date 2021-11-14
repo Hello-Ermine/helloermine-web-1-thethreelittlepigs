@@ -7,25 +7,26 @@ import F from './img/member/F.jpg'
 import GroundFooter from './img/GroundFooter.png'
 
 import styled from "styled-components";
-
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Members = styled.div`
-      position: absolute;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-around;
       flex-wrap: wrap;
+      box-sizing: border-box;
 `
 
 const Person = styled.div`
       width: 120px;
       margin: 1em;
-      transition: 300ms ease-in-out;
-
-      :hover{
-        transform: translateY(-5px);
-      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       & >*{
         text-transform: uppercase;
@@ -33,7 +34,7 @@ const Person = styled.div`
       }
 
       & p{
-        color: rgb(80, 80, 80);
+        color: rgb(112,112,112);
       }
 
       & img{
@@ -46,22 +47,43 @@ const Person = styled.div`
 `
 const Footer = styled.div`
         width: 100%;
-        height: 500px;
+        height: 100%;
+        position: relative;
         background-image: url(${GroundFooter});
         padding: 5em 0;
         background-size: cover;
         background-repeat: no-repeat;
-        overflow: auto;
         text-align: center;
         box-sizing: border-box;
+        overflow: hidden;
+
 
         & h1 {
           margin: 1.5em 0 .5em 0;
         }
 `
+
+const Pic = styled.div`
+      width: 130px;
+      height: 130px;
+      border-radius: 100px;
+      border: .5em solid #FFE7C3;
+      background-image: url(${props => props.src});
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;   
+      transition: 300ms ease-in-out;
+
+      :hover{
+        transform: translateY(-5px);
+      }
+`
+
 function Member(props) {
   return (<Person>
-    <img src={props.imgSrc} alt={props.name} />
+    <a href={props.contact}>
+      <Pic src={props.imgSrc} />
+    </a>
     <h2>{props.name}</h2>
     <p>{props.duty}</p>
   </Person>
@@ -69,15 +91,22 @@ function Member(props) {
 }
 
 export default function FooterComponent() {
-  return <Footer>
-    <h1>Members</h1>
-    <Members>
-      <Member name="Nt" duty="WEB DESIGN" imgSrc={nt} />
-      <Member name="Geaw" duty="WEB DESIGN" imgSrc={geaw} />
-      <Member name="Jerome" duty="FRONT-END" imgSrc={jerome} />
-      <Member name="Benz" duty="FRONT-END" imgSrc={benz} />
-      <Member name="Nine" duty="FRONT-END" imgSrc={nine} />
-      <Member name="F" duty="INFRASTRUCTURE" imgSrc={F} />
-    </Members>
-  </Footer>
+  useEffect(() => {
+    AOS.init({
+      duration:1000
+    });
+  }, []);
+  return (
+    <Footer>
+      <h1>Members</h1>
+      <Members data-aos="fade-up">
+        <Member name="Nt" duty="WEB DESIGN" imgSrc={nt} contact="" />
+        <Member name="Geaw" duty="WEB DESIGN" imgSrc={geaw} contact="" />
+        <Member name="Jerome" duty="FRONT-END" imgSrc={jerome} contact="" />
+        <Member name="Benz" duty="FRONT-END" imgSrc={benz} contact="" />
+        <Member name="Nine" duty="FRONT-END" imgSrc={nine} contact="" />
+        <Member name="F" duty="INFRASTRUCTURE" imgSrc={F} contact="" />
+      </Members>
+    </Footer>
+  )
 }

@@ -9,6 +9,10 @@ import cloudLeftHigh from "./img/Cloud2.png";
 import cloudRight from "./img/CloudRight.png";
 
 import styled from "styled-components";
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 const ThirdPig = styled.div`
         width: 100%;
@@ -44,20 +48,25 @@ const ThirdPig = styled.div`
             animation: floatingsun infinite 3s ease-in-out;
         }
 
-        & p{
+        & .plot{
             position: absolute;
-            left: 50%;
+            left: 10%;
             top: 50px;
-            transform: translateX(-50%);
             width: 80%;
+            padding: 40px 100px;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-sizing: border-box;
+            border-radius: 2em;
+
             font-size: 1.5em;
             line-height: 2em;
             z-index: 10;
-            color: rgb(80, 80, 80);
+            color: rgb(112,112,112);
             font-family: 'Roboto', sans-serif;
         }
 
-        & p span{
+        & .plot span{
             font-size: 2em;
             font-weight: 800;
             color: black;
@@ -71,7 +80,7 @@ const ThirdPig = styled.div`
 
         @keyframes wolfAnimation {
             0% {bottom: 300px;}
-            10% {bottom: 300px;}
+            20% {bottom: 300px;}
             30% {bottom: 420px;}
             50% {bottom: 420px;}
             51% {bottom: 430px;}
@@ -128,7 +137,7 @@ const TheThirdPig = styled.div`
 
         @keyframes wrench{
             0% {transform:rotate(0deg) scaleX(-1);}
-            50% {transform:rotate(5deg) scaleX(-1);}
+            50% {transform:rotate(10deg) scaleX(-1);}
             100% {transform:rotate(0deg) scaleX(-1);}
         }
 `
@@ -184,25 +193,32 @@ const Clouds = styled.div`
 `
 
 export default function ThirdPigComponent() {
-    return <ThirdPig>
-        <img src={cloudnsun} alt="cloud" className="cloudnsun" />
-        <Clouds>
-            <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow" />
-            <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh" />
-            <img src={cloudRight} alt="cloud" className="cloudRight" />
-            <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow outframe" />
-            <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh outframe" />
-            <img src={cloudRight} alt="cloud" className="cloudRight outframe" />
-
-        </Clouds>
-        <MountainBackground />
-        <GrassGround />
-        <img src={brickHouse} alt="brickHouse" className="brickHouse" />
-        <TheThirdPig><img src={wrench} alt="wrench" className="wrench" /></TheThirdPig>
-        <img src={wolf} alt="wolf" className="wolf" />
-        <p><span>หมูตัวที่สาม</span> แสนขยันสร้างบ้านจากอิฐสุดแข็งแรง มันคิดว่าถึงจะเหนื่อยกว่า แต่ก็ต้องคุ้มเหนื่อย
-            แน่นอน พอหมูทั้งสองวิ่งมาถึง ก็เล่าเรื่องทั้งหมดให้ฟัง ทั้งสามจึงไปแอบในบ้านทันที 
-            พอเจ้าหมาป่ามา เป่าเท่าไหร่บ้านก็ไม่เคลื่อนไหวจึงเลือกปีนปล่องไฟเข้าไปแต่เจ้าหมูก็เตรียมหม้อที่มีน้ำเดือดเอาไว้ใต้ปล่องไฟ 
-            เจ้าหมาป่าจึงถูกจัดการในที่สุด ทั้งสามจึงรอดปลอดภัย และใช้ชีวิตอย่างมีความสุข </p>
-    </ThirdPig>
+    useEffect(() => {
+        AOS.init({
+        });
+    }, []);
+    return (
+        <ThirdPig>
+            <img src={cloudnsun} alt="cloud" className="cloudnsun" />
+            <Clouds>
+                <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow" />
+                <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh" />
+                <img src={cloudRight} alt="cloud" className="cloudRight" />
+                <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow outframe" />
+                <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh outframe" />
+                <img src={cloudRight} alt="cloud" className="cloudRight outframe" />
+            </Clouds>
+            <MountainBackground />
+            <GrassGround />
+            <img src={brickHouse} alt="brickHouse" className="brickHouse" />
+            <TheThirdPig><img src={wrench} alt="wrench" className="wrench" /></TheThirdPig>
+            <img src={wolf} alt="wolf" className="wolf" />
+            <div className="plot" data-aos="fade-up">
+                <p ><span>หมูตัวที่สาม</span> แสนขยันสร้างบ้านจากอิฐสุดแข็งแรง มันคิดว่าถึงจะเหนื่อยกว่า แต่ก็ต้องคุ้มเหนื่อย
+                    แน่นอน พอหมูทั้งสองวิ่งมาถึง ก็เล่าเรื่องทั้งหมดให้ฟัง ทั้งสามจึงไปแอบในบ้านทันที
+                    พอเจ้าหมาป่ามา เป่าเท่าไหร่บ้านก็ไม่เคลื่อนไหวจึงเลือกปีนปล่องไฟเข้าไปแต่เจ้าหมูก็เตรียมหม้อที่มีน้ำเดือดเอาไว้ใต้ปล่องไฟ
+                    เจ้าหมาป่าจึงถูกจัดการในที่สุด ทั้งสามจึงรอดปลอดภัย และใช้ชีวิตอย่างมีความสุข </p>
+            </div>
+        </ThirdPig>
+    )
 }

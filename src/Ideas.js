@@ -1,4 +1,3 @@
-import styled from "styled-components";
 
 import mascot from "./img/MascotProject.png";
 import textbox from "./img/textbox.png";
@@ -7,6 +6,8 @@ import grass2 from "./img/grass2.png";
 import cloudLeftLow from "./img/Cloud.png";
 import cloudLeftHigh from "./img/Cloud2.png";
 import cloudRight from "./img/CloudRight.png";
+
+import styled from "styled-components";
 
 const Textbox = styled.div`
     position: relative;
@@ -31,14 +32,6 @@ const Textbox = styled.div`
         font-family: 'Roboto', sans-serif;
     }
 
-    & .content{
-        width: 300px;
-        height: 180px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
     & h1{
         font-size: 3em;
     }
@@ -56,6 +49,15 @@ const Textbox = styled.div`
         50%  {transform: translate(-40%,-265px);}
         100% {transform: translate(-40%,-250px);}
     }
+`
+
+const Content = styled.div`
+        width: 300px;
+        height: 180px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
 `
 
 const Ideas = styled.div`
@@ -143,29 +145,29 @@ const Clouds = styled.div`
 `
 
 export default function IdeasComponent() {
-    return <Ideas>
-        <Textbox>
-            <img src={mascot} alt="mascot" className="mascot" />
-            <div className="content">
-                <h1>IDEAS</h1>
-                <p>เราควรนำข้อผิดพลาดมาเป็นบทเรียนและพัฒนาตัวเองให้ดียิ่งขึ้น และก่อนจะทำสิ่งใดควรไตร่ตรองให้
-                    รอบคอบก่อนเสมอ</p>
-            </div>
-        </Textbox>
-        <Clouds>
-            <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow" />
-            <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh" />
-            <img src={cloudRight} alt="cloud" className="cloudRight" />
-            <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow outframe" />
-            <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh outframe" />
-            <img src={cloudRight} alt="cloud" className="cloudRight outframe" />
-        </Clouds>
-        <GrassGround>
-            <img src={grass1} alt="grass1" className="grass1" />
-            <img src={grass2} alt="grass2" className="grass2" />
-            <img src={grass2} alt="grass3" className="grass3" />
-        </GrassGround>
-        <div className="ground blured"></div>
-    </Ideas>
-
+    return (
+        <Ideas>
+            <Textbox>
+                <img src={mascot} alt="mascot" className="mascot" />
+                <Content>
+                    <h1>IDEAS</h1>
+                    <p>เราควรนำข้อผิดพลาดมาเป็นบทเรียนและพัฒนาตัวเองให้ดียิ่งขึ้น และก่อนจะทำสิ่งใดควรไตร่ตรองให้
+                        รอบคอบก่อนเสมอ</p>
+                </Content>
+            </Textbox>
+            <Clouds>
+                <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow" />
+                <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh" />
+                <img src={cloudRight} alt="cloud" className="cloudRight" />
+                <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow outframe" />
+                <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh outframe" />
+                <img src={cloudRight} alt="cloud" className="cloudRight outframe" />
+            </Clouds>
+            <GrassGround>
+                <img src={grass1} alt="grass1" className="grass1" />
+                <img src={grass2} alt="grass2" className="grass2" />
+                <img src={grass2} alt="grass3" className="grass3" />
+            </GrassGround>
+        </Ideas>
+        )
 }
