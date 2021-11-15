@@ -34,7 +34,13 @@ const Person = styled.div`
       }
 
       & p{
-        color: rgb(112,112,112);
+        color: white;
+        font-weight: 400;
+        text-shadow: 0 0 10px black;
+      }
+
+      & h2{
+        font-weight: 800;
       }
 
       & img{
@@ -60,6 +66,10 @@ const Footer = styled.div`
 
         & h1 {
           margin: 1.5em 0 .5em 0;
+          font-weight: 900;
+          font-size: 3.5em;
+          font-family: 'Mitr', sans-serif;
+          color: #D2891B;
         }
 `
 
@@ -73,9 +83,21 @@ const Pic = styled.div`
       background-repeat: no-repeat;
       background-position: center;   
       transition: 300ms ease-in-out;
+      overflow: hidden ;
 
       :hover{
-        transform: translateY(-5px);
+        
+        animation: floatingPic 1s ease-in-out infinite;
+      }
+      :active{
+        transform: translateY(0);
+        box-shadow: none;
+      }
+
+      @keyframes floatingPic{
+        0%{transform:translateY(0px);}
+        50%{transform:translateY(-5px);}
+        100%{transform:translateY(0px);}
       }
 `
 
@@ -93,19 +115,19 @@ function Member(props) {
 export default function FooterComponent() {
   useEffect(() => {
     AOS.init({
-      duration:1000
+      duration: 1000
     });
   }, []);
   return (
     <Footer>
       <h1>Members</h1>
       <Members data-aos="fade-up">
-        <Member name="Nt" duty="WEB DESIGN" imgSrc={nt} contact="" />
-        <Member name="Geaw" duty="WEB DESIGN" imgSrc={geaw} contact="" />
-        <Member name="Jerome" duty="FRONT-END" imgSrc={jerome} contact="" />
-        <Member name="Benz" duty="FRONT-END" imgSrc={benz} contact="" />
-        <Member name="Nine" duty="FRONT-END" imgSrc={nine} contact="" />
-        <Member name="F" duty="INFRASTRUCTURE" imgSrc={F} contact="" />
+        <Member name="Nt" duty="WEB DESIGN" imgSrc={nt} contact="https://www.instagram.com/pongsaparkk/" />
+        <Member name="Geaw" duty="WEB DESIGN" imgSrc={geaw} contact="https://www.instagram.com/ggenaw/" />
+        <Member name="Jerome" duty="FRONT-END" imgSrc={jerome} contact="https://www.instagram.com/lostjerome/" />
+        <Member name="Benz" duty="FRONT-END" imgSrc={benz} contact="https://www.instagram.com/_13enz_/" />
+        <Member name="Nine" duty="FRONT-END" imgSrc={nine} contact="https://instagram.com/9.righthere/" />
+        <Member name="F" duty="INFRASTRUCTURE" imgSrc={F} contact="https://www.instagram.com/ratcha_f101/" />
       </Members>
     </Footer>
   )

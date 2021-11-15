@@ -7,10 +7,12 @@ import cloudLeftLow from "./img/Cloud.png";
 import cloudLeftHigh from "./img/Cloud2.png";
 import cloudRight from "./img/CloudRight.png";
 
+import CloudTransition from "./CloudTransition";
+
 import styled from "styled-components";
 
 const Textbox = styled.div`
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-40%,-350px);
@@ -32,13 +34,6 @@ const Textbox = styled.div`
         font-family: 'Roboto', sans-serif;
     }
 
-    & h1{
-        font-size: 3em;
-    }
-    & p{
-        font-size: 1.2em;
-        margin-top: 10px;
-    }
     & .mascot{
         top: 120px;
         left: -120px;
@@ -58,6 +53,20 @@ const Content = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+
+        & >*{
+        font-family: 'Mitr', sans-serif;
+        }
+        
+        & h1{
+            color: #F27400;
+            font-size: 2.5em;
+        }
+
+        & p{
+            font-size: 1.2em;
+            color: rgb(100,100,100);
+    }
 `
 
 const Ideas = styled.div`
@@ -155,6 +164,7 @@ export default function IdeasComponent() {
                         รอบคอบก่อนเสมอ</p>
                 </Content>
             </Textbox>
+            <CloudTransition/>
             <Clouds>
                 <img src={cloudLeftLow} alt="cloud" className="cloudLeftLow" />
                 <img src={cloudLeftHigh} alt="cloud" className="cloudLeftHigh" />

@@ -8,6 +8,10 @@ import cloudLeftLow from "./img/Cloud.png";
 import cloudLeftHigh from "./img/Cloud2.png";
 import cloudRight from "./img/CloudRight.png";
 
+import CloudTransition from "./CloudTransition";
+
+import './Font.css'
+
 import styled from "styled-components";
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -63,13 +67,20 @@ const ThirdPig = styled.div`
             line-height: 2em;
             z-index: 10;
             color: rgb(112,112,112);
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Mitr', sans-serif;
+            animation: floatingPlot infinite 3s ease-in-out;
         }
 
         & .plot span{
             font-size: 2em;
-            font-weight: 800;
+            font-weight: 600;
             color: black;
+        }
+
+        @keyframes floatingPlot{
+            0%   {top: 50px;}
+            50%  {top: 40px;}
+            100% {top: 50px;}
         }
 
         @keyframes floatingsun {
@@ -217,8 +228,9 @@ export default function ThirdPigComponent() {
                 <p ><span>หมูตัวที่สาม</span> แสนขยันสร้างบ้านจากอิฐสุดแข็งแรง มันคิดว่าถึงจะเหนื่อยกว่า แต่ก็ต้องคุ้มเหนื่อย
                     แน่นอน พอหมูทั้งสองวิ่งมาถึง ก็เล่าเรื่องทั้งหมดให้ฟัง ทั้งสามจึงไปแอบในบ้านทันที
                     พอเจ้าหมาป่ามา เป่าเท่าไหร่บ้านก็ไม่เคลื่อนไหวจึงเลือกปีนปล่องไฟเข้าไปแต่เจ้าหมูก็เตรียมหม้อที่มีน้ำเดือดเอาไว้ใต้ปล่องไฟ
-                    เจ้าหมาป่าจึงถูกจัดการในที่สุด ทั้งสามจึงรอดปลอดภัย และใช้ชีวิตอย่างมีความสุข </p>
+                    เจ้าหมาป่าจึงถูกจัดการในที่สุด ทั้งสามจึงรอดปลอดภัย และใช้ชีวิตอย่างมีความสุข</p>
             </div>
+            <CloudTransition/>
         </ThirdPig>
     )
 }
