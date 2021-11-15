@@ -93,10 +93,10 @@ const Scene2 = styled.div`
             top: 570px;
             position: absolute;
             width: 120px;
-            animation: wolfSlideShow 10s linear infinite;
+            animation: wolfSlideShow2 10s linear infinite;
         }
 
-        @keyframes wolfSlideShow {
+        @keyframes wolfSlideShow2 {
             0% {
                 right: 60%;
             }
@@ -196,7 +196,7 @@ const Pig2 = styled.div`
 export default function FrameScene2() {
   return (
       <Scene2>
-          
+
           <SkyZone>
               <img src={cloud1} alt="cloud" className="cloud1" />
               <img src={cloud3} alt="cloud" className="cloud3" />

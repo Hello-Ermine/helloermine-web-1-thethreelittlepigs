@@ -105,7 +105,7 @@ const Scene1 = styled.div`
             top: 570px;
             position: absolute;
             width: 120px;
-            animation: wolfSlideShow 10s linear infinite;
+            animation: wolfSlideShow1 10s linear infinite;
         }
 
         & p{
@@ -132,7 +132,7 @@ const Scene1 = styled.div`
             color: black;
         }
 
-        @keyframes wolfSlideShow {
+        @keyframes wolfSlideShow1 {
             0% {
                 left: 35%;
             }
@@ -231,7 +231,7 @@ export default function FrameScene1() {
               ถึงเวลาต้องออกจากบ้านไปสร้างบ้านของตัวเองแล้ว
               หมูตัวแรกแสนขี้เกียจเลือกเอาฟางมาสร้างเพราะมันง่ายที่สุด
               แต่พอเจ้าหมาป่ามาก็เป่าลมใส่บ้านเจ้าหมูตัวแรกพังหมดเพราะฟางมันเบา
-              เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน              
+              เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน   
          </p>
     </Scene1>
   );
