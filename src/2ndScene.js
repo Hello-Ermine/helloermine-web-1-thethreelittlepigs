@@ -195,27 +195,34 @@ const Pig2 = styled.div`
 //export scene2
 export default function FrameScene2() {
   return (
-    <Scene2>
-      <SkyZone>
-        <img src={cloud1} alt="cloud" className="cloud1" />
-        <img src={cloud3} alt="cloud" className="cloud3" />
-        <img src={cloud1} alt="cloud" className="cloud1 outframe" />
-        <img src={cloud3} alt="cloud" className="cloud3 outframe" />
-      </SkyZone>
-      <BackgroundScene2 />
-      <img src={House2} alt="House" className="House" />
-      <Pig2>
-        <img src={Saw} alt="Saw" className="saw" />
-      </Pig2>
-      <img src={wolf} alt="wolf" className="wolf" />
-      <p>
-        <span>หมูตัวที่สอง</span>
+      <Scene2>
+          
+          <SkyZone>
+              <img src={cloud1} alt="cloud" className="cloud1" />
+              <img src={cloud3} alt="cloud" className="cloud3" />
+              <img src={cloud1} alt="cloud" className="cloud1 outframe" />
+              <img src={cloud3} alt="cloud" className="cloud3 outframe" />
+          </SkyZone>
+     
+          <BackgroundScene2 />
+     
+          <img src={House2} alt="House" className="House" />
+     
+          <Pig2>
+              <img src={Saw} alt="Saw" className="saw" />
+          </Pig2>
+     
+          <img src={wolf} alt="wolf" className="wolf" />
+    
+          <p> 
+              <span>หมูตัวที่สอง</span>
               สร้างบ้านจากไม้เพราะมันง่ายและดูแข็งแรงดี
               พอหมูตัวแรกวิ่งมาถึงเจ้าหมาป่าก็วิ่งตามมาติดๆ
               ทั้งสองเลยวิ่งไปหลบในบ้านไม้ แต่ก็โดนเจ้าหมาป่าเป่าบ้านจนปลิวไปอยู่ดี
               ทั้งสองรีบหนีอีกครั้ง
               โดยครั้งนี้วิ่งไปที่บ้านเจ้าหมูตัวที่สาม
-      </p>
-    </Scene2>
+          </p>
+
+      </Scene2>
   );
 }

@@ -206,27 +206,33 @@ const Pig1 = styled.div`
 export default function FrameScene1() {
   return (
     <Scene1>
-      <SkyZone>
-        <img src={cloud4} alt="cloud" className="cloud4" />
-        <img src={cloud1} alt="cloud" className="cloud1" />
-        <img src={cloud3} alt="cloud" className="cloud3" />
-        <img src={cloud4} alt="cloud" className="cloud4 outframe" />
-        <img src={cloud1} alt="cloud" className="cloud1 outframe" />
-        <img src={cloud3} alt="cloud" className="cloud3 outframe" />
-      </SkyZone>
-      <BackgroundScene1 />
-      <img src={House1} alt="House" className="House" />
-      <Pig1>
-        <img src={Hammer} alt="hammer" className="hammer" />
-      </Pig1>
-      <img src={wolf} alt="wolf" className="wolf" />
-      <p>
-        <span> หมูสามตัว</span>
-        ถึงเวลาต้องออกจากบ้านไปสร้างบ้านของตัวเองแล้ว
-        หมูตัวแรกแสนขี้เกียจเลือกเอาฟางมาสร้างเพราะมันง่ายที่สุด
-        แต่พอเจ้าหมาป่ามาก็เป่าลมใส่บ้านเจ้าหมูตัวแรกพังหมดเพราะฟางมันเบา
-        เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน
-      </p>
+      
+          <SkyZone>   
+              <img src={cloud1} alt="cloud" className="cloud1" />
+              <img src={cloud3} alt="cloud" className="cloud3" />
+              <img src={cloud4} alt="cloud" className="cloud4" />
+              <img src={cloud1} alt="cloud" className="cloud1 outframe" />
+              <img src={cloud3} alt="cloud" className="cloud3 outframe" />
+              <img src={cloud4} alt="cloud" className="cloud4 outframe" />
+          </SkyZone>
+          
+          <BackgroundScene1 />
+          
+          <img src={House1} alt="House" className="House" />
+
+          <Pig1>
+              <img src={Hammer} alt="hammer" className="hammer" />
+          </Pig1>
+          
+          <img src={wolf} alt="wolf" className="wolf" />  
+          <p>    
+              <span> หมูสามตัว</span>
+    
+              ถึงเวลาต้องออกจากบ้านไปสร้างบ้านของตัวเองแล้ว
+              หมูตัวแรกแสนขี้เกียจเลือกเอาฟางมาสร้างเพราะมันง่ายที่สุด
+              แต่พอเจ้าหมาป่ามาก็เป่าลมใส่บ้านเจ้าหมูตัวแรกพังหมดเพราะฟางมันเบา
+              เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน              
+         </p>
     </Scene1>
   );
 }
