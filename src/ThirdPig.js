@@ -2,7 +2,7 @@ import brickHouse from "./img/บ้านอิฐ.png";
 import theThirdPig from "./img/Pigscene3.png";
 import wrench from "./img/wrench.png";
 import thirdpigBG from "./img/bgscene3.png";
-import wolf from "./img/wolf.png";
+import wolf3 from "./img/wolf.png";
 import cloudnsun from "./img/CloudnSun.png"
 import cloudLeftLow from "./img/Cloud.png";
 import cloudLeftHigh from "./img/Cloud2.png";
@@ -36,7 +36,7 @@ const ThirdPig = styled.div`
         & .theThirdPig{
             
         }
-        & .wolf{
+        & .wolf3{
             bottom: 420px;
             right: 20vw;
             position: absolute;
@@ -57,18 +57,16 @@ const ThirdPig = styled.div`
             left: 10%;
             top: 50px;
             width: 80%;
-            padding: 40px 100px;
+            padding: 40px;
             background-color: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
             box-sizing: border-box;
-            border-radius: 2em;
-
+            border-radius: 25px;
             font-size: 1.5em;
             line-height: 2em;
             z-index: 10;
             color: rgb(112,112,112);
-            font-family: 'Mitr', sans-serif;
-            animation: floatingPlot infinite 3s ease-in-out;
+            font-family: 'Itim', cursive;
         }
 
         & .plot span{
@@ -223,8 +221,8 @@ export default function ThirdPigComponent() {
             <GrassGround />
             <img src={brickHouse} alt="brickHouse" className="brickHouse" />
             <TheThirdPig><img src={wrench} alt="wrench" className="wrench" /></TheThirdPig>
-            <img src={wolf} alt="wolf" className="wolf" />
-            <div className="plot" data-aos="fade-up">
+            <img src={wolf3} alt="wolf" className="wolf3" />
+            <div className="plot" data-aos="fade-up" data-aos-delay="1000">
                 <p ><span>หมูตัวที่สาม</span> แสนขยันสร้างบ้านจากอิฐสุดแข็งแรง มันคิดว่าถึงจะเหนื่อยกว่า แต่ก็ต้องคุ้มเหนื่อย
                     แน่นอน พอหมูทั้งสองวิ่งมาถึง ก็เล่าเรื่องทั้งหมดให้ฟัง ทั้งสามจึงไปแอบในบ้านทันที
                     พอเจ้าหมาป่ามา เป่าเท่าไหร่บ้านก็ไม่เคลื่อนไหวจึงเลือกปีนปล่องไฟเข้าไปแต่เจ้าหมูก็เตรียมหม้อที่มีน้ำเดือดเอาไว้ใต้ปล่องไฟ

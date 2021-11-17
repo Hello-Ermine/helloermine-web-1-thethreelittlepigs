@@ -87,7 +87,7 @@ const GrassGround = styled.div`
     bottom: 0;
     width: 100%;
     height: 200px;
-    background: linear-gradient(0deg, rgba(143, 185, 34, 0) 0%, rgba(143, 185, 34, 1) 30%);
+    background: rgb(143, 185, 34);
 
     & > *{
         position: absolute;
@@ -155,7 +155,7 @@ const Clouds = styled.div`
 
 export default function IdeasComponent() {
     return (
-        <Ideas>
+        <Ideas id="ideas">
             <Textbox>
                 <img src={mascot} alt="mascot" className="mascot" />
                 <Content>

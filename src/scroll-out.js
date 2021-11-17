@@ -1,35 +1,37 @@
-var ScrollOut = (function () {
+var ScrollOut = (function() {
     'use strict';
 
     function clamp(v, min, max) {
         return min > v ? min : max < v ? max : v;
     }
+
     function sign(x) {
         return (+(x > 0) - +(x < 0));
     }
+
     function round(n) {
         return Math.round(n * 10000) / 10000;
     }
 
     var cache = {};
+
     function replacer(match) {
         return '-' + match[0].toLowerCase();
     }
+
     function hyphenate(value) {
         return cache[value] || (cache[value] = value.replace(/([A-Z])/g, replacer));
     }
 
     /** find elements */
     function $(e, parent) {
-        return !e || e.length === 0
-            ? // null or empty string returns empty array
-            []
-            : e.nodeName
-                ? // a single element is wrapped in an array
-                [e]
-                : // selector and NodeList are converted to Element[]
-                [].slice.call(e[0].nodeName ? e : (parent || document.documentElement).querySelectorAll(e));
+        return !e || e.length === 0 ? // null or empty string returns empty array
+            [] :
+            e.nodeName ? // a single element is wrapped in an array
+            [e] : // selector and NodeList are converted to Element[]
+            [].slice.call(e[0].nodeName ? e : (parent || document.documentElement).querySelectorAll(e));
     }
+
     function setAttrs(el, attrs) {
         // tslint:disable-next-line:forin
         for (var key in attrs) {
@@ -38,8 +40,9 @@ var ScrollOut = (function () {
             }
         }
     }
+
     function setProps(cssProps) {
-        return function (el, props) {
+        return function(el, props) {
             for (var key in props) {
                 if (key.indexOf('_') && (cssProps === true || cssProps[key])) {
                     el.style.setProperty('--' + hyphenate(key), round(props[key]));
@@ -50,21 +53,24 @@ var ScrollOut = (function () {
 
     var clearTask;
     var subscribers = [];
+
     function loop() {
         clearTask = 0;
-        subscribers.slice().forEach(function (s2) { return s2(); });
+        subscribers.slice().forEach(function(s2) { return s2(); });
         enqueue();
     }
+
     function enqueue() {
         if (!clearTask && subscribers.length) {
             clearTask = requestAnimationFrame(loop);
         }
     }
+
     function subscribe(fn) {
         subscribers.push(fn);
         enqueue();
-        return function () {
-            subscribers = subscribers.filter(function (s) { return s !== fn; });
+        return function() {
+            subscribers = subscribers.filter(function(s) { return s !== fn; });
             if (!subscribers.length && clearTask) {
                 cancelAnimationFrame(clearTask);
                 clearTask = 0;
@@ -75,7 +81,8 @@ var ScrollOut = (function () {
     function unwrap(value, el, ctx, doc) {
         return typeof value === 'function' ? value(el, ctx, doc) : value;
     }
-    function noop() { }
+
+    function noop() {}
 
     /**
      * Creates a new instance of ScrollOut that marks elements in the viewport with
@@ -99,9 +106,11 @@ var ScrollOut = (function () {
         var elementContextList = [];
         var clientOffsetX, clientOffsety;
         var sub;
+
         function index() {
-            elementContextList = $(opts.targets || '[data-scroll]', $(opts.scope || doc)[0]).map(function (el) { return ({ element: el }); });
+            elementContextList = $(opts.targets || '[data-scroll]', $(opts.scope || doc)[0]).map(function(el) { return ({ element: el }); });
         }
+
         function update() {
             // Calculate position, direction and ratio.
             var clientWidth = doc.clientWidth;
@@ -139,10 +148,10 @@ var ScrollOut = (function () {
                 var elementWidth = element.clientWidth || element.offsetWidth || 0;
                 // Find visible ratios for each element.
                 var visibleX = (clamp(offsetX + elementWidth, clientOffsetX, clientOffsetX + clientWidth) -
-                    clamp(offsetX, clientOffsetX, clientOffsetX + clientWidth)) /
+                        clamp(offsetX, clientOffsetX, clientOffsetX + clientWidth)) /
                     elementWidth;
                 var visibleY = (clamp(offsetY + elementHeight, clientOffsety, clientOffsety + clientHeight) -
-                    clamp(offsetY, clientOffsety, clientOffsety + clientHeight)) /
+                        clamp(offsetY, clientOffsety, clientOffsety + clientHeight)) /
                     elementHeight;
                 var intersectX = visibleX === 1 ? 0 : sign(offsetX - clientOffsetX);
                 var intersectY = visibleY === 1 ? 0 : sign(offsetY - clientOffsety);
@@ -151,11 +160,9 @@ var ScrollOut = (function () {
                 var visible = void 0;
                 if (opts.offset) {
                     visible = unwrap(opts.offset, element, ctx, doc) <= clientOffsety ? 1 : 0;
-                }
-                else if ((unwrap(opts.threshold, element, ctx, doc) || 0) < visibleX * visibleY) {
+                } else if ((unwrap(opts.threshold, element, ctx, doc) || 0) < visibleX * visibleY) {
                     visible = 1;
-                }
-                else {
+                } else {
                     visible = 0;
                 }
                 var changedVisible = ctx.visible !== visible;
@@ -195,6 +202,7 @@ var ScrollOut = (function () {
                 sub = subscribe(render);
             }
         }
+
         function render() {
             maybeUnsubscribe();
             // Update root attributes if they have changed.
@@ -228,6 +236,7 @@ var ScrollOut = (function () {
                 }
             }
         }
+
         function maybeUnsubscribe() {
             if (sub) {
                 sub();
@@ -240,8 +249,8 @@ var ScrollOut = (function () {
         render();
         // Collapses sequential updates into a single update.
         var updateTaskId = 0;
-        var onUpdate = function () {
-            updateTaskId = updateTaskId || setTimeout(function () {
+        var onUpdate = function() {
+            updateTaskId = updateTaskId || setTimeout(function() {
                 updateTaskId = 0;
                 update();
             }, 0);
@@ -252,7 +261,7 @@ var ScrollOut = (function () {
         return {
             index: index,
             update: update,
-            teardown: function () {
+            teardown: function() {
                 maybeUnsubscribe();
                 window.removeEventListener('resize', onUpdate);
                 container.removeEventListener('scroll', onUpdate);
