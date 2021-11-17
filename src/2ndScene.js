@@ -122,7 +122,7 @@ const Scene2 = styled.div`
 
         & p{
             position: absolute;
-            left 50%;
+            left: 50%;
             top: 70px;
             border-radius: 25px;
             background-color: rgba(255,255,255,0.3);

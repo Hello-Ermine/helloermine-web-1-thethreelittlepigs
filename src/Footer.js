@@ -119,7 +119,7 @@ export default function FooterComponent() {
     });
   }, []);
   return (
-    <Footer>
+    <Footer id="about_us">
       <h1>Members</h1>
       <Members data-aos="fade-up">
         <Member name="Nt" duty="WEB DESIGN" imgSrc={nt} contact="https://www.instagram.com/pongsaparkk/" />

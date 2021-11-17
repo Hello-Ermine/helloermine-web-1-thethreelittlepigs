@@ -155,7 +155,7 @@ const Clouds = styled.div`
 
 export default function IdeasComponent() {
     return (
-        <Ideas>
+        <Ideas id="ideas">
             <Textbox>
                 <img src={mascot} alt="mascot" className="mascot" />
                 <Content>

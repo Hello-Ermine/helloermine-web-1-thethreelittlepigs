@@ -110,7 +110,7 @@ const Scene1 = styled.div`
 
         & p{
             position: absolute;
-            left 65%;
+            left: 65%;
             top: 150px;
             border-radius: 25px;
             background-color: rgba(255,255,255,0.3);
@@ -205,7 +205,7 @@ const Pig1 = styled.div`
 //export scene1
 export default function FrameScene1() {
   return (
-    <Scene1>
+    <Scene1  id="story">
       
           <SkyZone>   
               <img src={cloud1} alt="cloud" className="cloud1" />
