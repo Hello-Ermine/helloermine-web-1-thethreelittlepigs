@@ -28,9 +28,10 @@ const FadeTransitionBlue = styled.div`
 `;
 const Connector = styled.div`
     width: 100%;
-    height: 100px;
+    height: 200px;
     background: ${props => props.color};
-    position: relative;
+    transform: translateY(-100px);
+    position: absolute;
     z-index: 1;
 `
 
@@ -38,17 +39,16 @@ function App() {
   return (
     <div className="App">
       <Firstpage />
-      <Connector color="linear-gradient(0deg, rgba(119, 186, 38, 0) 0%, 
-      rgba(119, 186, 38, 1) 30%)"/>
+      <Connector color="linear-gradient(0deg, rgba(119,191,1,0) 0%, rgba(119,191,1,1) 30%, rgba(119,191,1,1) 70%, rgba(119,191,1,0) 100%)"/>
       <Scene1 />
       <FadeTransitionGreen />
       <FadeTransitionBlue />
       <Scene2 />
-      <Connector color="linear-gradient(0deg, rgba(119, 191, 1, 0) 0%, rgba(119, 191, 1, 1) 30%)"/>
+      <Connector color="linear-gradient(0deg, rgba(119,191,1,0) 0%, rgba(119,191,1,1) 30%, rgba(119,191,1,1) 70%, rgba(119,191,1,0) 100%)"/>
       <ThirdPigComponent />
-      <Connector color="linear-gradient(0deg, rgba(143, 185, 34, 0) 0%, rgba(143, 185, 34, 1) 30%)"/>
-      <IdeasComponent /> 
-      <Connector color="linear-gradient(0deg, rgba(143, 185, 34, 0) 0%, rgba(143, 185, 34, 1) 30%)" />
+      <Connector color="linear-gradient(0deg, rgba(143, 185, 34, 0) 0%, rgba(143, 185, 34, 1) 50%)"/>
+      <IdeasComponent />
+      <Connector color="linear-gradient(0deg, rgba(143, 185, 34, 0) 0%, rgba(143, 185, 34, 1) 50%)" />
       <FooterComponent />
     </div>
   );

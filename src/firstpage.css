@@ -1,15 +1,21 @@
-body{
+body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-.head1, .head2 {
+.Nav {
+    z-index: 1000000 !important;
+}
+
+.head1,
+.head2 {
     font-family: 'Luckiest Guy', cursive;
     font-size: 5em;
 }
 
 .ppp {
     font-family: 'Gloria Hallelujah', cursive;
-
 }
 
 .ccc {
@@ -23,15 +29,16 @@ body{
     z-index: 999;
     top: 5vw;
     left: 25vw;
-
 }
 
-.cat :hover {
+.cat>* {
+    color: black;
+    font-weight: 600;
+}
+
+.cat>*:hover {
     color: gray;
 }
-
-
-
 
 .cloudleft {
     position: absolute;
@@ -54,7 +61,7 @@ body{
     width: 15vw;
 }
 
-.wolf {
+.wolf0 {
     position: absolute;
     left: 53vw;
     bottom: -3vw;
@@ -93,4 +100,11 @@ body{
     width: 100vw;
     height: 100%;
     bottom: 0;
+    transform: translateY(46px);
+}
+
+.cloudnsun {
+    position: absolute;
+    width: 250px;
+    animation: floatingsun infinite 3s ease-in-out;
 }

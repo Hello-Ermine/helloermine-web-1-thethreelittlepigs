@@ -14,7 +14,6 @@ animation 15/11/21
 
 //photo PATH
 import BGS1 from "./img/Sc1/BgScene1.png";
-import BGCrop from "./img/Sc1/BgScene1_crop.png";
 import cloud1 from "./img/Sc1/Cloud.png";
 import cloud3 from "./img/Sc1/Cloud3.png";
 import cloud4 from "./img/Sc1/Cloud2.png";
@@ -22,6 +21,10 @@ import PigS1 from "./img/Sc1/PigScene1.png";
 import wolf from "./img/Sc1/wolf.png";
 import House1 from "./img/Sc1/บ้านฟาง.png";
 import Hammer from "./img/Sc1/HammerScene1.png";
+
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 //dependency & font
 import "./Font.css";
@@ -110,19 +113,19 @@ const Scene1 = styled.div`
 
         & p{
             position: absolute;
-            left: 65%;
+            left: 32.5%;
             top: 150px;
             border-radius: 25px;
             background-color: rgba(255,255,255,0.3);
             background-size: cover;
             background-repeat: no-repeat;
-            padding: 20px;
-            transform: translateX(-50%);
+            padding: 40px;
             width: 52%;
             font-size: 1.5em;
             line-height: 2em;
             z-index: 10;
             color: rgb(80, 80, 80);
+            backdrop-filter: blur(10px);
             font-family: 'Itim', cursive;
         }
 
@@ -204,35 +207,39 @@ const Pig1 = styled.div`
 
 //export scene1
 export default function FrameScene1() {
+  useEffect(() => {
+    AOS.init({
+    });
+  }, []);
   return (
-    <Scene1  id="story">
-      
-          <SkyZone>   
-              <img src={cloud1} alt="cloud" className="cloud1" />
-              <img src={cloud3} alt="cloud" className="cloud3" />
-              <img src={cloud4} alt="cloud" className="cloud4" />
-              <img src={cloud1} alt="cloud" className="cloud1 outframe" />
-              <img src={cloud3} alt="cloud" className="cloud3 outframe" />
-              <img src={cloud4} alt="cloud" className="cloud4 outframe" />
-          </SkyZone>
-          
-          <BackgroundScene1 />
-          
-          <img src={House1} alt="House" className="House" />
+    <Scene1 id="story">
 
-          <Pig1>
-              <img src={Hammer} alt="hammer" className="hammer" />
-          </Pig1>
-          
-          <img src={wolf} alt="wolf" className="wolf" />  
-          <p>    
-              <span> หมูสามตัว</span>
-    
-              ถึงเวลาต้องออกจากบ้านไปสร้างบ้านของตัวเองแล้ว
-              หมูตัวแรกแสนขี้เกียจเลือกเอาฟางมาสร้างเพราะมันง่ายที่สุด
-              แต่พอเจ้าหมาป่ามาก็เป่าลมใส่บ้านเจ้าหมูตัวแรกพังหมดเพราะฟางมันเบา
-              เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน   
-         </p>
+      <SkyZone>
+        <img src={cloud1} alt="cloud" className="cloud1" />
+        <img src={cloud3} alt="cloud" className="cloud3" />
+        <img src={cloud4} alt="cloud" className="cloud4" />
+        <img src={cloud1} alt="cloud" className="cloud1 outframe" />
+        <img src={cloud3} alt="cloud" className="cloud3 outframe" />
+        <img src={cloud4} alt="cloud" className="cloud4 outframe" />
+      </SkyZone>
+
+      <BackgroundScene1 />
+
+      <img src={House1} alt="House" className="House" />
+
+      <Pig1>
+        <img src={Hammer} alt="hammer" className="hammer" />
+      </Pig1>
+
+      <img src={wolf} alt="wolf" className="wolf" />
+      <p data-aos="fade-up" data-aos-delay="1000">
+        <span> หมูสามตัว</span>
+
+        &nbsp; ถึงเวลาต้องออกจากบ้านไปสร้างบ้านของตัวเองแล้ว
+        หมูตัวแรกแสนขี้เกียจเลือกเอาฟางมาสร้างเพราะมันง่ายที่สุด
+        แต่พอเจ้าหมาป่ามาก็เป่าลมใส่บ้านเจ้าหมูตัวแรกพังหมดเพราะฟางมันเบา
+        เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน
+      </p>
     </Scene1>
   );
 }

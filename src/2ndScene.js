@@ -19,9 +19,14 @@ import BGS2 from "./img/Sc2/BgScene2.png";
 import cloud1 from "./img/Sc2/Cloud1.png";
 import cloud3 from "./img/Sc2/Cloud3.png";
 import PigS2 from "./img/Sc2/PigScene2.png";
-import wolf from "./img/Sc2/wolf_flip.png";
+import wolf2 from "./img/Sc2/wolf_flip.png";
 import House2 from "./img/Sc2/บ้านไม้.png";
 import Saw from "./img/Sc2/SawScene2.png";
+import CloudTransition from "./CloudTransition";
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 //dependency & font
 import "./Font.css";
@@ -88,12 +93,12 @@ const Scene2 = styled.div`
             z-index: 10;
         }
       
-        & .wolf{
-            right: 65%;
-            top: 570px;
+        & .wolf2{
             position: absolute;
+            right: 60%;
+            top: 570px;
             width: 120px;
-            animation: wolfSlideShow2 10s linear infinite;
+            animation: wolfSlideShow2 7s linear infinite;
         }
 
         @keyframes wolfSlideShow2 {
@@ -122,20 +127,21 @@ const Scene2 = styled.div`
 
         & p{
             position: absolute;
-            left: 50%;
+            left: 25%;
             top: 70px;
             border-radius: 25px;
             background-color: rgba(255,255,255,0.3);
             background-size: cover;
             background-repeat: no-repeat;
-            padding: 20px;
-            transform: translateX(-50%);
+            padding: 40px;
             width: 52%;
             font-size: 1.5em;
             line-height: 2em;
             z-index: 10;
             color: rgb(80, 80, 80);
             font-family: 'Itim', cursive;
+            backdrop-filter: blur(10px);
+
         }
 
         & p span{
@@ -194,6 +200,10 @@ const Pig2 = styled.div`
 
 //export scene2
 export default function FrameScene2() {
+  useEffect(() => {
+    AOS.init({
+    });
+}, []);
   return (
       <Scene2>
 
@@ -212,16 +222,17 @@ export default function FrameScene2() {
               <img src={Saw} alt="Saw" className="saw" />
           </Pig2>
      
-          <img src={wolf} alt="wolf" className="wolf" />
+          <img src={wolf2} alt="wolf2" className="wolf2" />
     
-          <p> 
+          <p data-aos="fade-up" data-aos-delay="1000"> 
               <span>หมูตัวที่สอง</span>
-              สร้างบ้านจากไม้เพราะมันง่ายและดูแข็งแรงดี
+              &nbsp; สร้างบ้านจากไม้เพราะมันง่ายและดูแข็งแรงดี
               พอหมูตัวแรกวิ่งมาถึงเจ้าหมาป่าก็วิ่งตามมาติดๆ
               ทั้งสองเลยวิ่งไปหลบในบ้านไม้ แต่ก็โดนเจ้าหมาป่าเป่าบ้านจนปลิวไปอยู่ดี
               ทั้งสองรีบหนีอีกครั้ง
               โดยครั้งนี้วิ่งไปที่บ้านเจ้าหมูตัวที่สาม
           </p>
+          <CloudTransition/>
 
       </Scene2>
   );
