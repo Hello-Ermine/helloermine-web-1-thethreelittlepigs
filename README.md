@@ -1,3 +1,15 @@
+# Work time log
+
+### `1stScene`
+framing at 13/11/21 \
+animation at 15/11/21
+
+### `2ndScene`
+framing at 13/11/21 \
+animation at 14/11/21 \
+
+# Yarn V3.1 Package
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
