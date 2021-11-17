@@ -1,0 +1,110 @@
+.head1{
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 5em;
+}
+
+.head2{
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 5em;
+}
+
+
+
+.ppp{
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+
+.ccc{
+    background-color: #F0F9FF;
+    height: 100vh;
+}
+
+.khao{
+    position: absolute;
+    z-index: 999;
+    top: 5vw;
+    left: 25vw;
+
+}
+
+.cat :hover{
+
+}
+
+
+
+
+.cloudleft{
+    position: absolute;
+    left: -4vw;
+    top: 2vw;
+    width: 20vw;
+
+    
+    
+
+}
+
+.cloudright{
+    position: absolute;
+    left: 75vw;
+    top:10vw;
+    width: 27vw;
+    
+
+}
+
+.cloudsun{
+    position: absolute;
+    left: 75vw;
+    top:0vw;
+    width: 15vw;
+    
+
+}
+
+.wolf{
+    position: absolute;
+    left: 53vw;
+    bottom: -3vw;
+    width: 40%;
+    
+
+}
+
+.grass{
+    position: relative;
+    margin-top:17rem;
+    width: 100vw;
+    
+    
+
+}
+
+.pig1{
+    width: 13vw ;
+    bottom: 10vw;
+    left: 45vw;
+    position: absolute;
+}
+
+.pig2{
+    width: 17vw ;
+    bottom: 12vw;
+    left: 32vw;
+    position: absolute;
+}
+
+.pig3{
+    width: 21vw ;
+    bottom: 15vw;
+    left: 15vw;
+    position: absolute;
+}
+
+.ab{
+    position: absolute;
+    width: 100vw;
+    
+}
