@@ -59,7 +59,7 @@ const Content = styled.div`
         }
         
         & h1{
-            color: #F27400;
+            color: #FFA31F;
             font-size: 2.5em;
         }
 
