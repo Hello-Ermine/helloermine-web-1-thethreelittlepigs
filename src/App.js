@@ -21,6 +21,17 @@ function App() {
       <IdeasComponent/>
       <Connector color="linear-gradient(0deg, rgba(143, 185, 34, 0) 0%, rgba(143, 185, 34, 1) 30%)"/>
       <FooterComponent/>
+    
+    
+=======
+    
+    
+import './App.css';
+import Firstpage from './firstpage.js';
+function App() {
+  return (
+    <div className="">
+      <Firstpage/>
     </div>
   );
 }
