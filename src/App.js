@@ -6,6 +6,7 @@ import IdeasComponent from "./Ideas.js";
 import ThirdPigComponent from "./ThirdPig.js";
 import Firstpage from './firstpage.js';
 import "./Font.css";
+import { useEffect } from "react";
 
 //scene fade transition
 const FadeTransitionGreen = styled.div`
@@ -36,6 +37,9 @@ const Connector = styled.div`
 `
 
 function App() {
+  useEffect(() => {
+    document.title = "AESOP'S FABLES : THE THREE LITTLE PIGS"
+ }, []);
   return (
     <div className="App">
       <Firstpage />

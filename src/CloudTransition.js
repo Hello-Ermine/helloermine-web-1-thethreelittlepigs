@@ -1,8 +1,11 @@
 import cloudLight from "./img/Cloud.png";
 import cloudHard from "./img/Cloud2.png";
 import cloudMedium from "./img/Cloud3.png";
-import "./scroll-out";
 import styled from "styled-components";
+
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const CloudComponent = styled.div`
         position: relative;
@@ -24,11 +27,11 @@ const CloudComponent = styled.div`
             transition-delay: 500ms;
         }
 
-        & .clouds[data-scroll=in] .cloud.left{
+        & .aos-animate .cloud.left{
             left: -120vh !important;
         }
 
-        & .clouds[data-scroll=in] .cloud.right{
+        & .aos-animate .cloud.right{
             right: -100vh !important;
         }
 
@@ -71,9 +74,14 @@ const CloudComponent = styled.div`
 `
 
 export default function CloudTransition() {
+    useEffect(() => {
+        AOS.init({
+          duration: 1000
+        });
+      }, []);
     return (
-        <CloudComponent>
-            <div className="clouds">
+        <CloudComponent >
+            <div className="clouds" data-aos="">
                 <img src={cloudLight} alt="cloud" className="cloud light left c1" />
                 <img src={cloudMedium} alt="cloud" className="cloud medium left c2" />
                 <img src={cloudHard} alt="cloud" className="cloud hard left c3" />
