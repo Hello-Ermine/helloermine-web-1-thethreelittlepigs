@@ -36,8 +36,8 @@ body {
 .khao {
     position: absolute;
     z-index: 999;
-    top: 5vw;
-    left: 25vw;
+    bottom: 55%;
+    left: 20%;
 }
 
 .cat>* {

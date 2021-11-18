@@ -8,7 +8,6 @@ import cloudLeftLow from "./img/Cloud.png";
 import cloudLeftHigh from "./img/Cloud2.png";
 import cloudRight from "./img/CloudRight.png";
 import cloudnsun from "./img/CloudnSun.png";
-import CloudTransition from "./CloudTransition";
 
 
 import { Navbar, Container } from "react-bootstrap"
@@ -119,7 +118,6 @@ export default function Firstpage() {
 
       </div>
 
-      <CloudTransition />
 
     </div>
   )

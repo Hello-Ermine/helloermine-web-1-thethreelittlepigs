@@ -29,6 +29,8 @@ import { useEffect } from "react";
 //dependency & font
 import "./Font.css";
 import styled from "styled-components";
+import CloudTransition from "./CloudTransition";
+
 
 //sky + animation
 const SkyZone = styled.div`
@@ -240,6 +242,8 @@ export default function FrameScene1() {
         แต่พอเจ้าหมาป่ามาก็เป่าลมใส่บ้านเจ้าหมูตัวแรกพังหมดเพราะฟางมันเบา
         เจ้าหมูจึงวิ่งสุดชีวิตไปหาหมูตัวที่สองเพราะเดี๋ยวจะโดนจับกินซะก่อน
       </p>
+      <CloudTransition />
+
     </Scene1>
   );
 }
