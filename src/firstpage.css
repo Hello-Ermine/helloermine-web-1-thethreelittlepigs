@@ -4,6 +4,14 @@ body {
     padding: 0;
 }
 
+.logo{
+    font-family: 'Righteous', cursive;
+}
+
+.logo .highlight{
+    color: #FAAF7A;
+}
+
 .Nav {
     z-index: 1000000 !important;
 }
@@ -22,6 +30,7 @@ body {
     background-color: #F0F9FF;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 .khao {

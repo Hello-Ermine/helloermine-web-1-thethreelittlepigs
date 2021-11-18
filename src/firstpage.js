@@ -1,4 +1,3 @@
-import logoproject from "./b/Logoproject.png";
 import pig1 from "./b/Pigscene1.png";
 import pig2 from "./b/Pigscene2.png";
 import pig3 from "./b/Pigscene3.png";
@@ -75,13 +74,8 @@ export default function Firstpage() {
         <Navbar bg="light" expand="lg" className="Nav" fixed="top">
           <Container fluid>
             <div>
-              <Navbar.Brand href="#home">
-                <img
-                  src={logoproject}
-                  width="200px"
-                  className="d-inline-block align-top"
-                  alt="React Bootstrap logo"
-                />
+              <Navbar.Brand href="#home" className="logo">
+                Aesop<span className="highlight">'s</span> Fables
               </Navbar.Brand>
             </div>
 

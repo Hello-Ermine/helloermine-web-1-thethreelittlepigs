@@ -40,7 +40,8 @@ const Person = styled.div`
       }
 
       & h2{
-        font-weight: 800;
+        font-weight: 700;
+        font-size: 1.5em;
       }
 
       & img{
